@@ -14,15 +14,18 @@ from config import (
 from categories import normalize_gender, parse_weight, get_weight_class
 
 
+import streamlit as st
+import gspread
+from google.oauth2.service_account import Credentials
+
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive",
 ]
 
-
 def get_client():
-    credentials = Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE,
+    credentials = Credentials.from_service_account_info(
+        dict(st.secrets["google"]),
         scopes=SCOPES,
     )
     return gspread.authorize(credentials)
