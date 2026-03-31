@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 
+import streamlit as st
+st.write("app started")
+
 from sheets_sync import sync_all, open_spreadsheet, clear_participant_data
 from bracket import (
     create_first_upper_round,
