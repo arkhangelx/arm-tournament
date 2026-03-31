@@ -7,7 +7,6 @@ from google.oauth2.service_account import Credentials
 
 from config import (
     SPREADSHEET_URL,
-    SERVICE_ACCOUNT_FILE,
     RAW_SHEET_NAME,
     CLEAN_SHEET_NAME,
 )
