@@ -26,11 +26,13 @@ def get_client():
         scopes=SCOPES,
     )
     return gspread.authorize(credentials)
+    st.write("creating google client")
 
 
 def open_spreadsheet():
     gc = get_client()
     return gc.open_by_url(SPREADSHEET_URL)
+    st.write("spreadsheet opened")
 
 
 def get_or_create_worksheet(spreadsheet, title: str, rows: int = 100, cols: int = 20):
